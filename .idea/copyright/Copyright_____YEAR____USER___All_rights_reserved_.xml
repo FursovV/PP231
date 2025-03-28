@@ -1,0 +1,5 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="myName" value="Copyright © ${YEAR} ${USER}. All rights reserved." />
+  </copyright>
+</component>
