@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить пользователя</title>
+</head>
+<body>
+<h1>Добавить нового пользователя</h1>
+
+<form th:action="@{/users/save}" th:object="${user}" method="post">
+    <div>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" th:field="*{name}" required>
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+    </div>
+    <div>
+        <label for="surname">Фамилия:</label>
+        <input type="text" id="surname" th:field="*{surname}" required>
+        <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname error</div>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required>
+        <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+    </div>
+    <button type="submit">Сохранить</button>
+</form>
+
+<br>
+<a th:href="@{/users}">Назад к списку</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.springframework.org/tags/form"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/tags/form ">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New User</title>
+</head>
+<body>
+<h2>Add New User</h2>
+
+<form th:action="@{/users/add}" th:object="${user}" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" th:field="*{surname}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" th:field="*{email}"/>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+</body>
+</html>-->
+
+
+
+<!--
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" th:field="*{name}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Surname</label>
+            <input type="text" class="form-control" th:field="*{surname}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" th:field="*{email}">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a th:href="@{/users}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>
+-->

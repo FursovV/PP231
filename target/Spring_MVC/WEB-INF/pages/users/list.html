@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Users List</title>
+</head>
+<body>
+<h1>Users List</h1>
+<br>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Operation</th>
+    </tr>
+
+    <c:forEach var="UpdateUser" items="${allUser}">
+    <c:url var="updateButton value="/updateUser">
+    <c:param name="userId" value="${user.id}"
+        </c:url>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.email}"></td>
+      <input type="button" value="Update"
+             onclick="window.location.href"='${UpdateUser}'">
+        </td>
+    </tr>
+
+</table>
+
+<br>
+
+<button class="add-btn" onclick="window.location.href='/users/add'">Add User</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="container mt-4">
+    <h1>Users List</h1>
+    <a th:href="@{/users/add}" class="btn btn-primary mb-3">Add New User</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.surname}"></td>
+            <td th:text="${user.email}"></td>
+            <td>
+                <a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-sm btn-warning">Edit</a>
+                <a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>-->
